@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 
-const login = () => {
+const Login = () => {
   const router = useRouter();
   const [formData, setFormData] = useState({
     email: "",
@@ -80,4 +80,4 @@ const login = () => {
   );
 };
 
-export default login;
+export default Login;

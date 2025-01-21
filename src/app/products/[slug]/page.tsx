@@ -16,7 +16,7 @@ import { RootState } from "@/app/lib/store";
 
 import { addToCart } from "@/app/lib/features/todos/cartSlice";
 
-export default function productlist(props: any) {
+export default function Productlist(props: any) {
   const [productsData, setProductsData] = useState<any[]>([]);
   const [filteredProducts, setFilteredProducts] = useState<any[]>([]);
   const [selectedProduct, setSelectedProduct] = useState<any | null>(null);
