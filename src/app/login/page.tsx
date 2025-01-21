@@ -29,7 +29,6 @@ const Login = () => {
 
   return (
     <div>
-      <Header />
       <div className="flex justify-center items-center h-screen flex-col">
         <div className="py-10 px-20 mb-10 border-2 space-y-4 rounded-3xl">
           <div className="text-center text-5xl font-bold text-green-700">
@@ -81,7 +80,6 @@ const Login = () => {
           Create new account? <span className="text-blue-700">Sign in</span>
         </p>
       </div>
-      <Footer />
     </div>
   );
 };

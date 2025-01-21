@@ -6,6 +6,7 @@ import { IoSearchOutline } from "react-icons/io5";
 import Link from "next/link";
 
 import { client } from "@/sanity/lib/client";
+import Cart from "./Cart";
 
 interface Product {
   title: string;
@@ -30,6 +31,7 @@ const Header = () => {
 
   return (
     <div className="shadow-md">
+      <Cart />
       <div className="flex flex-row justify-between items-center mx-5 my-2">
         <div className="flex flex-row gap-1 md:gap-10 justify-between items-center">
           <Link href="/">

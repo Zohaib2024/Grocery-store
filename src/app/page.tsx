@@ -13,8 +13,6 @@ import Link from "next/link";
 
 import { removeFromCart } from "@/app/lib/features/todos/cartSlice";
 import { RootState } from "@/app/lib/store";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
 
 export default function Home() {
   const [productsData, setProductsData] = useState<any[]>([]);
@@ -176,7 +174,6 @@ export default function Home() {
 
   return (
     <main>
-      <Header />
       <Heading title="Welcome to Online Grocery Store" />
       <div className="relative my-5">
         {/* Carousel */}
@@ -414,7 +411,6 @@ export default function Home() {
           </div>
         )}
       </div>
-      <Footer />
     </main>
   );
 }

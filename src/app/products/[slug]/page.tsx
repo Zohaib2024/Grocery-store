@@ -3,20 +3,21 @@ import { useState, useEffect } from "react";
 import { client } from "@/sanity/lib/client";
 import imageUrlBuilder from "@sanity/image-url";
 import { ImCancelCircle } from "react-icons/im";
-import Link from "next/link";
+// import Link from "next/link";
 
 import "react-toastify/dist/ReactToastify.css";
 import Swal from "sweetalert2";
 
-import { HiShoppingCart } from "react-icons/hi";
-import { removeFromCart } from "@/app/lib/features/todos/cartSlice";
+// import { HiShoppingCart } from "react-icons/hi";
+// import { removeFromCart } from "@/app/lib/features/todos/cartSlice";
 import { useDispatch, useSelector } from "react-redux";
 
-import { RootState } from "@/app/lib/store";
+// import { RootState } from "@/app/lib/store";
 
 import { addToCart } from "@/app/lib/features/todos/cartSlice";
 import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
+// import Cart from "@/app/components/Cart";
 
 export default function Productlist(props: any) {
   const [productsData, setProductsData] = useState<any[]>([]);
@@ -77,10 +78,9 @@ export default function Productlist(props: any) {
     return builder.image(source);
   };
 
-  const [isCartOpen, setIsCartOpen] = useState(false);
-  const cartItems = useSelector((state: RootState) => state.cart.items);
+  // const [isCartOpen, setIsCartOpen] = useState(false);
+  // const cartItems = useSelector((state: RootState) => state.cart.items);
   const dispatch = useDispatch();
-  // Move this outside of the function
 
   const handleAddToCart = () => {
     setIsLoading(true);
@@ -114,18 +114,18 @@ export default function Productlist(props: any) {
       setIsLoading(false);
     }
   };
-  const toggleCartSidebar = () => {
-    setIsCartOpen(!isCartOpen);
-  };
+  // const toggleCartSidebar = () => {
+  //   setIsCartOpen(!isCartOpen);
+  // };
 
-  const handleRemoveItem = (id: string) => {
-    dispatch(removeFromCart(id));
-  };
+  // const handleRemoveItem = (id: string) => {
+  //   dispatch(removeFromCart(id));
+  // };
 
-  const totalPrice = cartItems.reduce(
-    (acc, item) => acc + item.price * item.quantity,
-    0
-  );
+  // const totalPrice = cartItems.reduce(
+  //   (acc, item) => acc + item.price * item.quantity,
+  //   0
+  // );
 
   const [quantity, setQuantity] = useState(1);
   const increaseQuantity = () => setQuantity((prev) => prev + 1);
@@ -134,7 +134,7 @@ export default function Productlist(props: any) {
 
   return (
     <div>
-      <Header />
+      {/* <Cart /> */}
       <main className="mx-0 md:mx-10">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 my-14 px-5 md:px-0">
           {filteredProducts.map((product: any) => (
@@ -169,19 +169,19 @@ export default function Productlist(props: any) {
             </div>
           ))}
         </div>
-        {cartItems.length > 0 && (
+        {/* {cartItems.length > 0 && (
           <button
             className="fixed bottom-6 right-6  gap-1 hover:bg-green-500 hover:text-black  bg-green-900  text-white rounded-full p-4 shadow-lg flex items-center justify-center"
             onClick={toggleCartSidebar}
           >
             <HiShoppingCart size={25} />
-            {/* <span className="bg-green-600 text-white  rounded-full px-2 ml-1"> */}
+       
             {cartItems.length}
-            {/* </span> */}
+          
           </button>
-        )}
+        )} */}
 
-        {isCartOpen && (
+        {/* {isCartOpen && (
           <div className="fixed inset-0 bg-gray-800 bg-opacity-50 z-50">
             <div className="fixed top-0 right-0 bg-white w-96 h-full shadow-lg p-4">
               <h2 className="text-xl font-bold mb-4 text-center p-3 text-white bg-green-700">
@@ -247,7 +247,7 @@ export default function Productlist(props: any) {
               )}
             </div>
           </div>
-        )}
+        )} */}
 
         {selectedProduct && (
           <div className="fixed top-0 left-0 w-full h-full flex justify-center items-center bg-black bg-opacity-50 z-50">
@@ -315,7 +315,6 @@ export default function Productlist(props: any) {
           </div>
         )}
       </main>
-      <Footer />
     </div>
   );
 }
