@@ -131,12 +131,12 @@ export default function Productlist(props: any) {
     setQuantity((prev) => (prev > 1 ? prev - 1 : 1));
 
   return (
-    <main className="mx-20 ">
+    <main className="mx-0 md:mx-10">
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 my-14 px-5 md:px-0">
         {filteredProducts.map((product: any) => (
           <div
             key={product._id}
-            className="border  md:w-auto p-4 h-full rounded-lg shadow-md flex justify-center items-center flex-col"
+            className="border w-full  md:w-auto p-4 h-full rounded-lg shadow-md flex justify-center items-center flex-col"
           >
             {product.productImage?.asset?.url && (
               <img

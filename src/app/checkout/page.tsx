@@ -52,7 +52,7 @@ export default function Checkout() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 flex justify-center">
+    <div className="min-h-screen bg-gray-100  flex justify-center">
       <div className="bg-white p-8 rounded-lg shadow-lg w-screen">
         <h1 className="text-center text-2xl font-bold bg-green-700 mb-6 py-3 text-white">
           Checkout

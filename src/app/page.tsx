@@ -208,13 +208,13 @@ export default function Home() {
         </button>
       </div>
       <hr className="my-10" />
-      <div className="mx-10">
+      <div className="mx-0 md:mx-10">
         <Heading title="Shop by category" />
         <div className="flex flex-wrap gap-6 justify-center text-center mx-10">
           {categoriesData.map((cat: any) => (
             <button
               key={cat._id}
-              className={` p-10 cursor-pointer font-bold bg-green-100 ${selectedCategory === cat._id ? " bg-green-500 text-white" : ""}`}
+              className={` w-36 h-36 md:w-72 md:h-52 cursor-pointer font-bold bg-green-100 ${selectedCategory === cat._id ? " bg-green-500 text-white" : ""}`}
               onClick={() => setSelectedCategory(cat._id)}
             >
               <img
@@ -283,7 +283,7 @@ export default function Home() {
 
         {isCartOpen && (
           <div className="fixed inset-0 bg-gray-800 bg-opacity-50 z-50">
-            <div className="fixed top-0 right-0 bg-white w-96 h-full shadow-lg p-4">
+            <div className="fixed top-0 right-0 bg-white w-screen md:w-96 h-full shadow-lg p-4">
               <h2 className="text-xl font-bold mb-4 text-center p-3 text-white bg-green-700">
                 My Cart
               </h2>
