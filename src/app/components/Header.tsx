@@ -1,10 +1,9 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-
+import { usePathname } from "next/navigation";
 import { IoSearchOutline } from "react-icons/io5";
 import Link from "next/link";
-
 import { client } from "@/sanity/lib/client";
 import Cart from "./Cart";
 
@@ -15,6 +14,7 @@ interface Product {
 const Header = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [suggestions, setSuggestions] = useState<Product[]>([]);
+  const pathname = usePathname(); // Get the current route
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -31,7 +31,8 @@ const Header = () => {
 
   return (
     <div className="shadow-md">
-      <Cart />
+      {/* Hide Cart component when user is on the /checkout page */}
+      {pathname !== "/checkout" && <Cart />}
       <div className="flex flex-row justify-between items-center mx-5 my-2">
         <div className="flex flex-row gap-1 md:gap-10 justify-between items-center">
           <Link href="/">
@@ -54,13 +55,12 @@ const Header = () => {
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
             />
-
             {suggestions.length > 0 && (
-              <ul className="absolute top-full left-0 w-full  bg-white border border-gray-300 rounded-md shadow-md max-h-60 overflow-y-auto z-10">
+              <ul className="absolute top-full left-0 w-full bg-white border border-gray-300 rounded-md shadow-md max-h-60 overflow-y-auto z-10">
                 {suggestions.map((product, index) => (
                   <Link href={`/products/${product.title}`} key={index}>
                     <li
-                      className="px-4 py-3 flex flex-row gap-4  hover:bg-gray-100 cursor-pointer"
+                      className="px-4 py-3 flex flex-row gap-4 hover:bg-gray-100 cursor-pointer"
                       onClick={() => setSearchTerm(product.title)}
                     >
                       <IoSearchOutline size={20} />

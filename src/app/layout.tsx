@@ -4,7 +4,6 @@ import "./globals.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import StoreProvider from "./storeProvider";
-import Cart from "./components/Cart";
 
 export const metadata: Metadata = {
   title: "Create Next App",
