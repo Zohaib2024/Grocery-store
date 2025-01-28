@@ -1,11 +1,11 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
+//
 import { IoSearchOutline } from "react-icons/io5";
 import Link from "next/link";
 import { client } from "@/sanity/lib/client";
-import Cart from "./Cart";
+//
 
 interface Product {
   title: string;
@@ -14,7 +14,7 @@ interface Product {
 const Header = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [suggestions, setSuggestions] = useState<Product[]>([]);
-  const pathname = usePathname(); // Get the current route
+  //  // Get the current route
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -32,7 +32,7 @@ const Header = () => {
   return (
     <div className="shadow-md">
       {/* Hide Cart component when user is on the /checkout page */}
-      {pathname !== "/checkout" && <Cart />}
+
       <div className="flex flex-row justify-between items-center mx-5 my-2">
         <div className="flex flex-row gap-1 md:gap-10 justify-between items-center">
           <Link href="/">

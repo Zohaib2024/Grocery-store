@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Head from "next/head";
 import "./globals.css";
-import Header from "./components/Header";
 import Footer from "./components/Footer";
 import StoreProvider from "./storeProvider";
 
@@ -32,7 +31,6 @@ export default function RootLayout({
       </Head>
       <body>
         <StoreProvider>
-          <Header />
           {children}
           <Footer />
         </StoreProvider>

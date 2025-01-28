@@ -10,6 +10,7 @@ import { addToCart } from "@/app/lib/features/todos/cartSlice";
 import Swal from "sweetalert2";
 
 import { removeFromCart } from "@/app/lib/features/todos/cartSlice";
+import Header from "./components/Header";
 
 export default function Home() {
   const [productsData, setProductsData] = useState<any[]>([]);
@@ -157,6 +158,7 @@ export default function Home() {
 
   return (
     <main>
+      <Header />
       <Heading title="Welcome to Online Grocery Store" />
       <div className="relative my-5">
         {/* Carousel */}

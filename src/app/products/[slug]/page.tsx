@@ -134,6 +134,7 @@ export default function Productlist(props: any) {
 
   return (
     <div>
+      <Header />
       {/* <Cart /> */}
       <main className="mx-0 md:mx-10">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 my-14 px-5 md:px-0">

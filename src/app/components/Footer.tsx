@@ -1,10 +1,15 @@
+"use client";
 import React from "react";
 import { FaFacebookF, FaTwitter, FaYoutube, FaInstagram } from "react-icons/fa";
 import Wrapper from "./Wrapper";
+import { usePathname } from "next/navigation";
+import Cart from "./Cart";
 
 const Footer = () => {
+  const pathname = usePathname();
   return (
     <footer className="bg-green-800 text-black pt-14 pb-3">
+      {pathname !== "/checkout" && <Cart />}
       <Wrapper className="flex justify-between flex-col md:flex-row gap-[50px] md:gap-0">
         {/* LEFT START */}
         <div className="flex gap-[50px] md:gap-[75px] lg:gap-[100px] flex-col md:flex-row">
